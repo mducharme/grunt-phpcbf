@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<ruleset name="phpcbf_test">
+	<description>PHPCBF Unit Testing standard</description>
+
+	<rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing">
+		<properties>
+			<property name="equalsSpacing" value="1"/>
+		</properties>
+	</rule>
+</ruleset>
