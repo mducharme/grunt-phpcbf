@@ -1,5 +1,7 @@
 # grunt-phpcbf
 
+[![Build Status](https://travis-ci.org/mducharme/grunt-phpcbf.svg?branch=master)](https://travis-ci.org/mducharme/grunt-phpcbf)
+
 > Grunt plugin for running phpcbf (PHP Code Beautifier and Fixer)
 
 This plugin is heavily based on `grunt-phpcs` by Sascha Galley.
