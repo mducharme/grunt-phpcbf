@@ -5,7 +5,7 @@ class shortName
 {
     private $name;
 
-    function hello ($world)
+    function hello($world)
     {
         echo $world;
     }

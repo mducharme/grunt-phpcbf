@@ -41,20 +41,6 @@ grunt.initConfig({
 });
 ```
 
-### Options
-
-#### options.separator
-Type: `String`
-Default value: `',  '`
-
-A string value that is used to do something with whatever.
-
-#### options.punctuation
-Type: `String`
-Default value: `'.'`
-
-A string value that is used to do something else with whatever else.
-
 ### Usage Examples
 
 ```js
@@ -62,7 +48,7 @@ grunt.initConfig({
   phpcbf: {
     options: {},
     files: {
-      'dest/default_options': ['src/testing', 'src/123'],
+      src:['dest/default_options': ['src/testing', 'src/123'],
     },
   },
 });
@@ -121,7 +107,8 @@ Automatically convert tabs to the specified number of spaces when sniffing.
 Do whatever you want with the output.
 
 ```js
-function log(err, stdout, stderr, callback) {
+function log(err, stdout, stderr, callback) 
+{
   console.log(stdout);
   callback();
 }
@@ -136,6 +123,9 @@ grunt.initConfig({
   }
 });
 ```
+
+## Authors
+- Mathieu Ducharme mat@locomotive.ca
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).

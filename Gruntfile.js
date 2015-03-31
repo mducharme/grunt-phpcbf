@@ -43,14 +43,14 @@ module.exports = function(grunt) {
         psr2: {
           src: ['tmp/psr2.php'],
           options: {
-            //bin: 'vendor/bin/phpcs',
+            bin: 'vendor/bin/phpcbf',
             standard: 'PSR2'
           }
         },
         custom: {
           src: ['tmp/custom.php'],
           options: {
-            //bin: 'vendor/bin/phpcs',
+            bin: 'vendor/bin/phpcbf',
             standard: 'test/standard.xml'
           }
         }
