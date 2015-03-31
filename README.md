@@ -2,6 +2,12 @@
 
 > Grunt plugin for running phpcbf (PHP Code Beautifier and Fixer)
 
+This plugin is heavily based on `grunt-phpcs` by Sascha Galley.
+https://github.com/SaschaGalley/grunt-phpcs
+
+phpcbf is an automatic code-fixer based on PHP CodeSniffer.
+https://github.com/squizlabs/PHP_CodeSniffer/wiki/Fixing-Errors-Automatically
+
 ## Getting Started
 This plugin requires Grunt `~0.4.5`
 
@@ -51,9 +57,6 @@ A string value that is used to do something else with whatever else.
 
 ### Usage Examples
 
-#### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
-
 ```js
 grunt.initConfig({
   phpcbf: {
@@ -64,21 +67,73 @@ grunt.initConfig({
   },
 });
 ```
+###Options
 
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
+#### bin
+Type: `String`  Default: `'phpcbf'`
+
+#### maxBuffer
+Type: `Number` Default: `200*1024`
+
+Set the buffer size.
+
+#### verbose
+Type: `Boolean` Default: `false`
+
+Output more verbose information.
+
+#### noPatch
+Type: `Boolean` Default: `true`
+
+Do not create a patch file.
+
+#### severity
+Type: `Integer` Default: `false`
+
+The minimum severity required to display an error or warning.
+
+#### warningSeverity
+Type: `Integer` Default: `false`
+
+The minimum severity required to display a warning.
+
+#### errorSeverity
+Type: `Integer` Default: `false`
+
+The minimum severity required to display an error.
+
+#### standard
+Type: `String`  Default: `false`
+
+Define the standard to use. This can either be a _builtin_ standard like `PSR1`, `PSR2` or `PEAR` or a XML file
+containing a ruleset.
+
+Log report to the file.
+
+#### tabWidth
+Type: `Integer` Default: `false`
+
+Automatically convert tabs to the specified number of spaces when sniffing.
+
+
+### Custom callback
+
+Do whatever you want with the output.
 
 ```js
+function log(err, stdout, stderr, callback) {
+  console.log(stdout);
+  callback();
+}
 grunt.initConfig({
   phpcbf: {
+    app: {
+      src: ['src/**/*.php', 'tests/**/*.php']
+    },
     options: {
-      separator: ': ',
-      punctuation: ' !!!',
-    },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
+      callback: log
+    }
+  }
 });
 ```
 

@@ -2,7 +2,7 @@
  * grunt-phpcbf
  * https://github.com/mducharme/grunt-phpcbf
  *
- * Based on grunt-phpcs, by Sascha Gallery
+ * Based on grunt-phpcs, by Sascha Galley
  * https://github.com/SaschaGalley/grunt-phpcs
  *
  * Copyright (c) 2015 Mathieu Ducharme
