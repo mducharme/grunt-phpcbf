@@ -19,7 +19,8 @@ module.exports = function(grunt) {
   var command = {
     flags: {
       verbose: 'v',
-      noPatch: 'n'
+      noPatch: '-no-patch',
+      ignoreWarnings: 'n'
     },
     options: {
       errorSeverity: 'error-severity',
@@ -32,7 +33,8 @@ module.exports = function(grunt) {
   var defaults = {
     bin: 'phpcbf',
     maxBuffer: 200*1024,
-    noPatch: true
+    noPatch: true,
+    ignoreWarnings: true
   };
   var done = null;
     
